@@ -52,7 +52,7 @@ class MemberController extends Controller
     {
         $member = Member::findOrFail($id);
 
-        if (is_null($member)) {
+        if (!is_null($member)) {
             return response()->json($member);
         }else{
             return response()->json([
@@ -73,7 +73,7 @@ class MemberController extends Controller
     {
         $member = Member::findOrFail($id);
 
-        if (is_null($member)) {
+        if (!is_null($member)) {
             return response()->json($member);
         }else{
             return response()->json([

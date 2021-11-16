@@ -52,7 +52,7 @@ class IssueController extends Controller
     {
         $issueBook = IssueBook::findOrFail($id);
 
-        if (is_null($issueBook)) {
+        if (!is_null($issueBook)) {
             return response()->json($issueBook);
         }else{
             return response()->json([
@@ -72,7 +72,7 @@ class IssueController extends Controller
     {
         $issueBook = IssueBook::findOrFail($id);
 
-        if (is_null($issueBook)) {
+        if (!is_null($issueBook)) {
             return response()->json($issueBook);
         }else{
             return response()->json([

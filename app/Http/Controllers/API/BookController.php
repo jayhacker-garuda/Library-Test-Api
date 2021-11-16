@@ -50,12 +50,12 @@ class BookController extends Controller
     public function show($id)
     {
         $book = Book::findOrFail($id);
-        //  dd(is_null($book));
+        
         if (!is_null($book)) {
             return response()->json($book);
         }
 
-        
+
             return response()->json([
             'status' => 404,
             'message' => '🤘🏾🤐🤘🏾'
@@ -72,8 +72,8 @@ class BookController extends Controller
     public function edit($id)
     {
         $book = Book::findOrFail($id);
-        dd(is_null($book));
-        if (is_null($book)) {
+
+        if (!is_null($book)) {
             return response()->json($book);
         }else{
             return response()->json([
